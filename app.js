@@ -55,10 +55,10 @@ const index = require('./routes/index');
 app.use('/', index);
 
 const search = require('./routes/search');
-app.use('/', search);
+app.use('/search', search);
 
 const details = require('./routes/details');
-app.use('/', details);
+app.use('/details', details);
 
 
 module.exports = app;
