@@ -9,6 +9,15 @@ const mongoose     = require('mongoose');
 const logger       = require('morgan');
 const path         = require('path');
 
+//may not use all of these
+const session = require('express-session');
+const MongoStore = require('connect-mongo')(session);
+const flash = require('connect-flash');
+const bcrypt = require('bcryptjs');
+const User = require('./models/User');
+const passport = require('passport');
+
+
 mongoose.Promise = Promise;
 mongoose
   .connect('mongodb://localhost/hackathon-airbnb', {useNewUrlParser: true})
@@ -47,8 +56,7 @@ app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
 
 
 // default value for title local
-app.locals.title = 'Express - Generated with IronGenerator';
-
+app.locals.title = 'AirBnB';
 
 
 const index = require('./routes/index');
@@ -59,6 +67,10 @@ app.use('/search', search);
 
 const details = require('./routes/details');
 app.use('/details', details);
+
+//renting user. will need another user route for hosting
+const user = require('./routes/user');
+app.use('/user', user);
 
 
 module.exports = app;
