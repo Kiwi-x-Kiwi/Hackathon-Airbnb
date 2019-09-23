@@ -1,0 +1,76 @@
+<p>Form</p>
+
+<form action="/search" method="GET">
+  <label for="start-date">Start Date</label>
+  <input type="date" name="start-date">
+
+  <label for="end-date">End Date</label>
+  <input type="date" name="end-date">
+
+  <label for="guests">Guests</label>
+  <input type="number" name="guests">
+
+  <label for="work">Work Trip</label>
+  <select name="work" id="work">
+    <option value="yes">Yes</option>
+    <option value="no">No</option>
+  </select>
+
+  <label for="room">Room Type</label>
+  <select name="room" id="room">
+    <option value="Entire-home/apt">Entire Place</option>
+    <option value="Entire-home/apt">Apartment</option>
+    <option value="Private-room">Private Room</option>
+    <option value="Shared-room">Shared Room</option>
+
+    {{!-- <option value="Entire home/apt">Entire Place</option>
+    <option value="Entire home/apt">Apartment</option>
+    <option value="Private room">Private Room</option>
+    <option value="Shared room">Shared Room</option> --}}
+  </select>
+
+  <label for="min-price">Price Range</label>
+  <label for="min-price">Starting Price</label>
+  <input type="number" name="min-price">
+
+  <label for="min-price">Starting Price</label>
+  <input type="number" name="min-price">
+
+  <label for="verified">Verified places</label>
+  <select name="verified" id="verified">
+    <option value="yes">Yes</option>
+    <option value="no">No</option>
+  </select>
+
+  <label for="rooms">Rooms and Beds</label>
+  <label for="beds">Beds</label>
+
+  <input type="number" name="beds">
+  <label for="bedrooms">Bedrooms</label>
+  <input type="number" name="bedrooms">
+
+  <label for="bathrooms">Bathrooms</label>
+  <input type="number" name="bathrooms">
+
+  <label for="instant">Instant Book</label>
+  <select name="instant" id="instant">
+    <option value="yes">Yes</option>
+    <option value="no">No</option>
+  </select>
+
+  <label for="superhost">Superhost</label>
+  <select name="superhost" id="superhost">
+    <option value="yes">Yes</option>
+    <option value="no">No</option>
+  </select>
+
+  <label for="accessibility">Accessibility</label>
+  <select name="accessibility" id="accessibility">
+    <option value="">Entire Place</option>
+    <option value="Entire-home/apt">Apartment</option>
+    <option value="Private-room">Private Room</option>
+    <option value="Shared-room">Shared Room</option>
+  </select>
+
+
+</form>
