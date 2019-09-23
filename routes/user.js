@@ -17,6 +17,16 @@ router.get('/signup', (req, res, next) => {
 
 router.post('/signup', (req, res, next) => {
 
+  let host = false;
+
+  if (req.user) {
+    // check if logged in  
+    if (req.user.isHost) {
+      //check if logged in user in an admin if so give them true value to is admin
+      host = req.body.role ? req.body.role : false;
+    }
+  }
+
   let username = req.body.theUsername;
   let password = req.body.thePassword;
 
@@ -26,7 +36,7 @@ router.post('/signup', (req, res, next) => {
   User.create({
       username: username,
       password: hashPass,
-      //isAdmin: admin
+      isHost: host
     })
     .then((result) => {
 
