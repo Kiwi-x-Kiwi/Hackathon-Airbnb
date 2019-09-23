@@ -61,6 +61,8 @@ app.use(session({
   saveUninitialized: true
 }));
 
+// default value for title local
+app.locals.title = 'AirBnB';
 app.use(passport.initialize());
 // this line is basically turning passport on
 

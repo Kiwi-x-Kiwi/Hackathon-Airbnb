@@ -36,6 +36,7 @@ router.post('/signup', (req, res, next) => {
   User.create({
       username: username,
       password: hashPass,
+      //isAdmin: admin
       isHost: host
     })
     .then((result) => {
